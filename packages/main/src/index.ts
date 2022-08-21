@@ -1,6 +1,6 @@
-import { app, session } from 'electron';
+import {app, session} from 'electron';
 import './security-restrictions';
-import { restoreOrCreateWindow } from '/@/mainWindow';
+import {restoreOrCreateWindow} from '/@/mainWindow';
 
 /**
  * Prevent electron from running multiple instances.
@@ -57,7 +57,7 @@ const path = require('path');
 const os = require('os');
 const reactDevToolsPath = path.join(
   os.homedir(),
-  '/Library/Application Support/Google/Chrome/Default/Extensions/fmkadmapgofadopljbjfkapdkoienihi/4.25.0_0'
+  '/Library/Application Support/Google/Chrome/Default/Extensions/fmkadmapgofadopljbjfkapdkoienihi/4.25.0_0',
 );
 app.whenReady().then(async () => {
   await session.defaultSession.loadExtension(reactDevToolsPath);
@@ -70,6 +70,6 @@ if (import.meta.env.PROD) {
   app
     .whenReady()
     .then(() => import('electron-updater'))
-    .then(({ autoUpdater }) => autoUpdater.checkForUpdatesAndNotify())
+    .then(({autoUpdater}) => autoUpdater.checkForUpdatesAndNotify())
     .catch(e => console.error('Failed check updates:', e));
 }
