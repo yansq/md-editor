@@ -58,10 +58,10 @@ const os = require('os');
 const reactDevToolsPath = path.join(
   os.homedir(),
   '/Library/Application Support/Google/Chrome/Default/Extensions/fmkadmapgofadopljbjfkapdkoienihi/4.25.0_0'
-)
+);
 app.whenReady().then(async () => {
-  await session.defaultSession.loadExtension(reactDevToolsPath)
-})
+  await session.defaultSession.loadExtension(reactDevToolsPath);
+});
 
 /**
  * Check for new version of the application - production mode only.
